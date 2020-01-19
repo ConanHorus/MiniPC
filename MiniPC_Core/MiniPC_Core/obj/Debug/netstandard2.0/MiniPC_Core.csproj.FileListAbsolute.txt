@@ -1,0 +1,6 @@
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_Core\bin\Debug\netstandard2.0\MiniPC_Core.deps.json
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_Core\bin\Debug\netstandard2.0\MiniPC_Core.dll
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_Core\obj\Debug\netstandard2.0\MiniPC_Core.csprojAssemblyReference.cache
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_Core\obj\Debug\netstandard2.0\MiniPC_Core.csproj.CoreCompileInputs.cache
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_Core\obj\Debug\netstandard2.0\MiniPC_Core.AssemblyInfoInputs.cache
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_Core\obj\Debug\netstandard2.0\MiniPC_Core.AssemblyInfo.cs
