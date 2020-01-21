@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MiniPC_Core
+namespace MiniPC_Library.Memory
 {
   /// <summary>
   /// Emulated memory.
   /// </summary>
-  internal static class EmulatedMemory
+  public class EmulatedMemory
   {
     /// <summary>
     /// Size of memory buffer.
@@ -30,37 +30,23 @@ namespace MiniPC_Core
     public const int HALFWORD_LENGTH = 2;
 
     /// <summary>
-    /// Number of bytes in an instruction.
-    /// </summary>
-    public const int INSTRUCTION_LENGTH = WORD_LENGTH;
-
-    /// <summary>
     /// Internal memory.
     /// </summary>
-    private static byte[] memory = new byte[MEMORY_SIZE];
+    private byte[] memory = new byte[MEMORY_SIZE];
 
     /// <summary>
     /// Location of program counter.
     /// </summary>
-    private static ushort pcLocation = 0;
-
-    /// <summary>
-    /// Gets next instruction.
-    /// </summary>
-    /// <returns>Instruction.</returns>
-    public static uint GetNextInstruction()
-    {
-      return GetWord(pcLocation += INSTRUCTION_LENGTH);
-    }
+    private ushort pcLocation = 0;
 
     /// <summary>
     /// Gets a double word.
     /// </summary>
     /// <param name="address">Address of value.</param>
     /// <returns>Value.</returns>
-    public static ulong GetDoubleWord(ushort address)
+    public ulong GetDoubleWord(ushort address)
     {
-      return BufferMarshal.GetFromBuffer(memory, address, DOUBLEWORD_LENGTH);
+      return BufferMarshal.GetFromBuffer(this.memory, address, DOUBLEWORD_LENGTH);
     }
 
     /// <summary>
@@ -68,9 +54,9 @@ namespace MiniPC_Core
     /// </summary>
     /// <param name="value">Value.</param>
     /// <param name="address">Address to store value.</param>
-    public static void SetDoubleWord(ulong value, ushort address)
+    public void SetDoubleWord(ulong value, ushort address)
     {
-      BufferMarshal.SetInBuffer(value, memory, address, DOUBLEWORD_LENGTH);
+      BufferMarshal.SetInBuffer(value, this.memory, address, DOUBLEWORD_LENGTH);
     }
 
     /// <summary>
@@ -78,9 +64,9 @@ namespace MiniPC_Core
     /// </summary>
     /// <param name="address">Address of value.</param>
     /// <returns>Value.</returns>
-    public static uint GetWord(ushort address)
+    public uint GetWord(ushort address)
     {
-      return (uint)BufferMarshal.GetFromBuffer(memory, address, WORD_LENGTH);
+      return (uint)BufferMarshal.GetFromBuffer(this.memory, address, WORD_LENGTH);
     }
 
     /// <summary>
@@ -88,9 +74,9 @@ namespace MiniPC_Core
     /// </summary>
     /// <param name="value">Value.</param>
     /// <param name="address">Address to store value.</param>
-    public static void SetWord(uint value, ushort address)
+    public void SetWord(uint value, ushort address)
     {
-      BufferMarshal.SetInBuffer(value, memory, address, WORD_LENGTH);
+      BufferMarshal.SetInBuffer(value, this.memory, address, WORD_LENGTH);
     }
 
     /// <summary>
@@ -98,9 +84,9 @@ namespace MiniPC_Core
     /// </summary>
     /// <param name="address">Address of value.</param>
     /// <returns>Value.</returns>
-    public static ushort GetHalfWord(ushort address)
+    public ushort GetHalfWord(ushort address)
     {
-      return (ushort)BufferMarshal.GetFromBuffer(memory, address, HALFWORD_LENGTH);
+      return (ushort)BufferMarshal.GetFromBuffer(this.memory, address, HALFWORD_LENGTH);
     }
 
     /// <summary>
@@ -108,9 +94,9 @@ namespace MiniPC_Core
     /// </summary>
     /// <param name="value">Value.</param>
     /// <param name="address">Address to store value.</param>
-    public static void SetHalfWord(ushort value, ushort address)
+    public void SetHalfWord(ushort value, ushort address)
     {
-      BufferMarshal.SetInBuffer(value, memory, address, HALFWORD_LENGTH);
+      BufferMarshal.SetInBuffer(value, this.memory, address, HALFWORD_LENGTH);
     }
 
     /// <summary>
@@ -118,9 +104,9 @@ namespace MiniPC_Core
     /// </summary>
     /// <param name="address">Address of value.</param>
     /// <returns>Value.</returns>
-    public static byte GetByte(ushort address)
+    public byte GetByte(ushort address)
     {
-      return memory[address];
+      return this.memory[address];
     }
 
     /// <summary>
@@ -128,9 +114,9 @@ namespace MiniPC_Core
     /// </summary>
     /// <param name="value">Value.</param>
     /// <param name="address">Address to store value.</param>
-    public static void SetByte(byte value, ushort address)
+    public void SetByte(byte value, ushort address)
     {
-      memory[address] = value;
+      this.memory[address] = value;
     }
   }
 }

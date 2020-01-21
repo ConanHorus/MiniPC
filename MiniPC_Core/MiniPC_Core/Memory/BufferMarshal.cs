@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MiniPC_Core
+namespace MiniPC_Library.Memory
 {
   /// <summary>
   /// Marshals specific data sizes in and out of buffer.
