@@ -4,10 +4,9 @@ using System.Text;
 
 namespace MiniPC_Library.Memory
 {
-  /// <summary>
-  /// Emulated memory.
-  /// </summary>
+  /// <inheritdoc/>
   public class EmulatedMemory
+    : IEmulatedMemory
   {
     /// <summary>
     /// Size of memory buffer.
@@ -39,81 +38,49 @@ namespace MiniPC_Library.Memory
     /// </summary>
     private ushort pcLocation = 0;
 
-    /// <summary>
-    /// Gets a double word.
-    /// </summary>
-    /// <param name="address">Address of value.</param>
-    /// <returns>Value.</returns>
+    /// <inheritdoc/>
     public ulong GetDoubleWord(ushort address)
     {
       return BufferMarshal.GetFromBuffer(this.memory, address, DOUBLEWORD_LENGTH);
     }
 
-    /// <summary>
-    /// Sets a double word.
-    /// </summary>
-    /// <param name="value">Value.</param>
-    /// <param name="address">Address to store value.</param>
+    /// <inheritdoc/>
     public void SetDoubleWord(ulong value, ushort address)
     {
       BufferMarshal.SetInBuffer(value, this.memory, address, DOUBLEWORD_LENGTH);
     }
 
-    /// <summary>
-    /// Gets a word.
-    /// </summary>
-    /// <param name="address">Address of value.</param>
-    /// <returns>Value.</returns>
+    /// <inheritdoc/>
     public uint GetWord(ushort address)
     {
       return (uint)BufferMarshal.GetFromBuffer(this.memory, address, WORD_LENGTH);
     }
 
-    /// <summary>
-    /// Sets a word.
-    /// </summary>
-    /// <param name="value">Value.</param>
-    /// <param name="address">Address to store value.</param>
+    /// <inheritdoc/>
     public void SetWord(uint value, ushort address)
     {
       BufferMarshal.SetInBuffer(value, this.memory, address, WORD_LENGTH);
     }
 
-    /// <summary>
-    /// Gets a half word.
-    /// </summary>
-    /// <param name="address">Address of value.</param>
-    /// <returns>Value.</returns>
+    /// <inheritdoc/>
     public ushort GetHalfWord(ushort address)
     {
       return (ushort)BufferMarshal.GetFromBuffer(this.memory, address, HALFWORD_LENGTH);
     }
 
-    /// <summary>
-    /// Sets a half word.
-    /// </summary>
-    /// <param name="value">Value.</param>
-    /// <param name="address">Address to store value.</param>
+    /// <inheritdoc/>
     public void SetHalfWord(ushort value, ushort address)
     {
       BufferMarshal.SetInBuffer(value, this.memory, address, HALFWORD_LENGTH);
     }
 
-    /// <summary>
-    /// Gets a byte.
-    /// </summary>
-    /// <param name="address">Address of value.</param>
-    /// <returns>Value.</returns>
+    /// <inheritdoc/>
     public byte GetByte(ushort address)
     {
       return this.memory[address];
     }
 
-    /// <summary>
-    /// Sets a byte.
-    /// </summary>
-    /// <param name="value">Value.</param>
-    /// <param name="address">Address to store value.</param>
+    /// <inheritdoc/>
     public void SetByte(byte value, ushort address)
     {
       this.memory[address] = value;

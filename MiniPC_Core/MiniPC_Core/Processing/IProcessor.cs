@@ -13,8 +13,6 @@ namespace MiniPC_Library.Processing
     /// <summary>
     /// Performs a CPU cycle.
     /// </summary>
-    /// <param name="processorState">Processor state.</param>
-    /// <param name="memory">Memory to operate on.</param>
-    void PerformCycle(ProcessorState processorState, EmulatedMemory memory);
+    void PerformCycle();
   }
 }

@@ -33,7 +33,11 @@ namespace MiniPC_Console
     /// </summary>
     private static void SetupContainerGraph()
     {
-      Container.Register<Processor>();
+      Container.Register<IParsedInstruction, ParsedInstruction>();
+      Container.Register<IEmulatedMemory, EmulatedMemory>(Lifestyle.Singleton);
+      Container.Register<IALU, ALU>();
+      Container.Register<IProcessorState, ProcessorState>();
+      Container.Register<IProcessor, Processor>();
 
       Container.Verify();
     }

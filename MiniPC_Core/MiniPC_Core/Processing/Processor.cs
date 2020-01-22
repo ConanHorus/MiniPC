@@ -9,16 +9,47 @@ namespace MiniPC_Library.Processing
   public class Processor
     : IProcessor
   {
-    /// <inheritdoc/>
-    public void PerformCycle(ProcessorState processorState, EmulatedMemory memory)
+    /// <summary>
+    /// Parsed isntruction.
+    /// </summary>
+    private readonly IParsedInstruction parsedInstruction;
+
+    /// <summary>
+    /// Memory.
+    /// </summary>
+    private readonly IEmulatedMemory memory;
+
+    /// <summary>
+    /// ALU.
+    /// </summary>
+    private readonly IALU alu;
+
+    /// <summary>
+    /// Processor state.
+    /// </summary>
+    private readonly IProcessorState state;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="Processor"/> class.
+    /// </summary>
+    /// <param name="parsedInstruction">Parsed instruction.</param>
+    /// <param name="memory">Memory.</param>
+    /// <param name="alu">ALU.</param>
+    /// <param name="state">Processor state.</param>
+    public Processor(IParsedInstruction parsedInstruction, IEmulatedMemory memory, IALU alu, IProcessorState state)
     {
-      const int OPCODE_SHIFT = 26;
-      const byte OPCODE_MASK = 0b0011_1111;
+      this.parsedInstruction = parsedInstruction;
+      this.memory = memory;
+      this.alu = alu;
+      this.state = state;
+    }
 
-      uint rawInstruction = memory.GetWord(processorState.ProgramCounter);
-      processorState.ProgramCounter += EmulatedMemory.WORD_LENGTH;
-
-      byte opcode = (byte)((rawInstruction >> OPCODE_SHIFT) & OPCODE_MASK);
+    /// <inheritdoc/>
+    public void PerformCycle()
+    {
+      uint rawInstruction = this.memory.GetWord(this.state.ProgramCounter);
+      this.parsedInstruction.LoadRawInstruction(rawInstruction);
+      this.state.ProgramCounter += EmulatedMemory.WORD_LENGTH;
 
       // todo decide program flow based on opcode
       throw new NotImplementedException();

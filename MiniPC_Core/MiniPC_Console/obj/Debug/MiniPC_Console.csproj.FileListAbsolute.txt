@@ -1,0 +1,12 @@
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_Console\bin\Debug\MiniPC_Console.exe.config
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_Console\bin\Debug\MiniPC_Console.exe
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_Console\bin\Debug\MiniPC_Console.pdb
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_Console\bin\Debug\MiniPC_Library.dll
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_Console\bin\Debug\SimpleInjector.dll
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_Console\bin\Debug\MiniPC_Library.pdb
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_Console\bin\Debug\SimpleInjector.xml
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_Console\obj\Debug\MiniPC_Console.csprojAssemblyReference.cache
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_Console\obj\Debug\MiniPC_Console.csproj.CoreCompileInputs.cache
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_Console\obj\Debug\MiniPC_Console.csproj.CopyComplete
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_Console\obj\Debug\MiniPC_Console.exe
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_Console\obj\Debug\MiniPC_Console.pdb

@@ -4,3 +4,6 @@ C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_Core\obj\Debug\net
 C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_Core\obj\Debug\netstandard2.0\MiniPC_Library.csproj.CoreCompileInputs.cache
 C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_Core\obj\Debug\netstandard2.0\MiniPC_Library.AssemblyInfoInputs.cache
 C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_Core\obj\Debug\netstandard2.0\MiniPC_Library.AssemblyInfo.cs
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_Core\bin\Debug\netstandard2.0\MiniPC_Library.pdb
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_Core\obj\Debug\netstandard2.0\MiniPC_Library.dll
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_Core\obj\Debug\netstandard2.0\MiniPC_Library.pdb
