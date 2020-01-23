@@ -23,6 +23,16 @@ namespace MiniPC_Library.Processing
     /// </summary>
     private bool isWidthDirty = true;
 
+    /// <summary>
+    /// Ofset backing field.
+    /// </summary>
+    private short _offset;
+
+    /// <summary>
+    /// Whether offset is dirty.
+    /// </summary>
+    private bool isOffsetDirty = true;
+
     /// <inheritdoc/>
     public byte Opcode { get; private set; }
 
@@ -59,7 +69,24 @@ namespace MiniPC_Library.Processing
     public byte Immediate => throw new NotImplementedException();
 
     /// <inheritdoc/>
-    public short Offset => throw new NotImplementedException();
+    public short Offset
+    {
+      get
+      {
+        if (this.isOffsetDirty)
+        {
+          this.ExtractOffset();
+        }
+
+        return this._offset;
+      }
+
+      private set
+      {
+        this._offset = value;
+        this.isOffsetDirty = false;
+      }
+    }
 
     /// <inheritdoc/>
     public void LoadRawInstruction(ulong rawInstruction)
@@ -91,6 +118,26 @@ namespace MiniPC_Library.Processing
       const byte WIDTH_MASK = 0b0000_0011;
 
       this.Width = (byte)((this.rawInstruction >> WIDTH_SHIFT) & WIDTH_MASK);
+    }
+
+    /// <summary>
+    /// Extracts offset from raw instruction.
+    /// </summary>
+    private void ExtractOffset()
+    {
+      const int EXTEND_FLAG = 0xFF_00;
+      const byte NEGATIVE_CHECK = 0b1000_0000;
+      const byte OFFSET_MASK = 0b1111_1111;
+
+      byte b = (byte)(this.rawInstruction & OFFSET_MASK);
+
+      int value = b;
+      if (b >= NEGATIVE_CHECK)
+      {
+        value |= EXTEND_FLAG;
+      }
+
+      this.Offset = (short)value;
     }
   }
 }

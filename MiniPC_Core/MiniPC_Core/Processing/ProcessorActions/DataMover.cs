@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using MiniPC_Library.Memory;
+using MiniPC_Library.Processing.ProcessorActions.DataLocationBehaviors;
 
 namespace MiniPC_Library.Processing.ProcessorActions
 {
@@ -53,40 +54,31 @@ namespace MiniPC_Library.Processing.ProcessorActions
       switch (loc)
       {
         case DataLocationEnum.ALU1:
-          // todo return strategy
-          throw new NotImplementedException();
+          return new ALUFirstRegisterBehavior();
 
         case DataLocationEnum.ALU2:
-          // todo return strategy
-          throw new NotImplementedException();
+          return new ALUSecondRegisterBehavior();
 
         case DataLocationEnum.ALUResult:
-          // todo return strategy
-          throw new NotImplementedException();
+          return new ALUResultBehavior();
 
         case DataLocationEnum.Memory:
-          // todo return strategy
-          throw new NotImplementedException();
+          return new MemoryBehavior();
 
         case DataLocationEnum.MemoryThroughRegister1:
-          // todo return strategy
-          throw new NotImplementedException();
+          return new MemoryThroughFirstRegisterBehavior();
 
         case DataLocationEnum.MemoryThroughRegister2:
-          // todo return strategy
-          throw new NotImplementedException();
+          return new MemoryThroughSecondRegisterBehavior();
 
         case DataLocationEnum.ProgramCounter:
-          // todo return strategy
-          throw new NotImplementedException();
+          return new ProgramCounterBehavior();
 
         case DataLocationEnum.Register1:
-          // todo return strategy
-          throw new NotImplementedException();
+          return new FirstRegisterBehavior();
 
         case DataLocationEnum.Register2:
-          // todo return strategy
-          throw new NotImplementedException();
+          return new SecondRegisterBehavior();
 
         default:
           throw new ArgumentException("Location strategy not defined", nameof(loc));

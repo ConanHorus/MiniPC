@@ -12,7 +12,7 @@ namespace MiniPC_Library.Processing
     /// <summary>
     /// Stages value on ALU register.
     /// </summary>
-    /// <param name="register">Register 1 or 2.</param>
+    /// <param name="register">Register 0 or 1.</param>
     /// <param name="value">Value to stage.</param>
     void StageValue(int register, long value);
 
