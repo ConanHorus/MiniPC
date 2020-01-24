@@ -34,10 +34,10 @@ namespace MiniPC_Library.Processing
     private bool isOffsetDirty = true;
 
     /// <inheritdoc/>
-    public byte Opcode { get; private set; }
+    public byte Opcode { get; private set; } // todo unit test
 
     /// <inheritdoc/>
-    public byte Width
+    public byte Width // todo unit test
     {
       get
       {
@@ -57,19 +57,19 @@ namespace MiniPC_Library.Processing
     }
 
     /// <inheritdoc/>
-    public byte Register1 => throw new NotImplementedException();
+    public byte Register1 => throw new NotImplementedException(); // todo unit test
 
     /// <inheritdoc/>
-    public byte Register2 => throw new NotImplementedException();
+    public byte Register2 => throw new NotImplementedException(); // todo unit test
 
     /// <inheritdoc/>
-    public ushort Address => throw new NotImplementedException();
+    public ushort Address => throw new NotImplementedException(); // todo unit test
 
     /// <inheritdoc/>
-    public byte Immediate => throw new NotImplementedException();
+    public byte Immediate => throw new NotImplementedException(); // todo unit test
 
     /// <inheritdoc/>
-    public short Offset
+    public short Offset // todo unit test
     {
       get
       {

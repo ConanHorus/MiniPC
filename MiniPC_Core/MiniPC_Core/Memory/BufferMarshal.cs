@@ -16,11 +16,11 @@ namespace MiniPC_Library.Memory
     /// <param name="offset">Offset.</param>
     /// <param name="length">Number of bytes.</param>
     /// <returns>Value.</returns>
-    public static unsafe ulong GetFromBuffer(byte[] array, int offset, int length)
+    public static unsafe ulong GetFromBuffer(byte[] array, int offset, int length) // todo unit test
     {
-      if (length > 8)
+      if (length == 1)
       {
-        throw new ArgumentOutOfRangeException(nameof(length));
+        return array[offset];
       }
 
       if (offset + length >= array.Length)
@@ -50,11 +50,12 @@ namespace MiniPC_Library.Memory
     /// <param name="array">Byte array.</param>
     /// <param name="offset">Offset.</param>
     /// <param name="length">Number of bytes.</param>
-    public static unsafe void SetInBuffer(ulong value, byte[] array, int offset, int length)
+    public static unsafe void SetInBuffer(ulong value, byte[] array, int offset, int length) // todo unit test
     {
-      if (length > 8)
+      if (length == 1)
       {
-        throw new ArgumentOutOfRangeException(nameof(length));
+        array[offset] = (byte)value;
+        return;
       }
 
       int start = offset + length;

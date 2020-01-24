@@ -25,8 +25,8 @@ namespace MiniPC_Library.Processing.ProcessorActions
       byte b = 0;
       for (ushort i = 0; i < instruction.Immediate; i++)
       {
-        a = memory.GetByte((ushort)(addressA + i));
-        b = memory.GetByte((ushort)(addressB + i));
+        a = (byte)memory.GetValue(0, (ushort)(addressA + i));
+        b = (byte)memory.GetValue(0, (ushort)(addressB + i));
 
         if (a != b)
         {

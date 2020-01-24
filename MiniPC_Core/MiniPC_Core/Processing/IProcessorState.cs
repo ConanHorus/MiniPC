@@ -33,5 +33,15 @@ namespace MiniPC_Library.Processing
     /// Gets collection of registers.
     /// </summary>
     long[] Registers { get; }
+
+    /// <summary>
+    /// Gets or sets a value indicating whether processor is halted.
+    /// </summary>
+    bool Halted { get; set; }
+
+    /// <summary>
+    /// Gets or sets a value indicating whether processor is running.
+    /// </summary>
+    bool Running { get; set; }
   }
 }

@@ -14,7 +14,7 @@ namespace MiniPC_Library.Processing.ProcessorActions.DataLocationBehaviors
     /// <inheritdoc/>
     public long GetData(IParsedInstruction instruction, IEmulatedMemory memory, IProcessorState state, IALU alu)
     {
-      return (long)memory.GetDoubleWord(instruction.Address);
+      return (long)memory.GetValue(instruction.Width, instruction.Address);
     }
 
     /// <inheritdoc/>
@@ -25,7 +25,7 @@ namespace MiniPC_Library.Processing.ProcessorActions.DataLocationBehaviors
       IALU alu,
       long value)
     {
-      memory.SetDoubleWord((ulong)value, instruction.Address);
+      memory.SetValue(instruction.Width, (ulong)value, instruction.Address);
     }
   }
 }

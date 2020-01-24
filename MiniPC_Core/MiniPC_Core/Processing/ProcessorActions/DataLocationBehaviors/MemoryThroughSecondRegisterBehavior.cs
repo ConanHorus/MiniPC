@@ -14,13 +14,18 @@ namespace MiniPC_Library.Processing.ProcessorActions.DataLocationBehaviors
     /// <inheritdoc/>
     public long GetData(IParsedInstruction instruction, IEmulatedMemory memory, IProcessorState state, IALU alu)
     {
-      return (long)memory.GetDoubleWord((ushort)state.Registers[instruction.Register2]);
+      return (long)memory.GetValue(instruction.Width, (ushort)state.Registers[instruction.Register2]);
     }
 
     /// <inheritdoc/>
-    public void PutData(IParsedInstruction instruction, IEmulatedMemory memory, IProcessorState state, IALU alu, long value)
+    public void PutData(
+      IParsedInstruction instruction,
+      IEmulatedMemory memory,
+      IProcessorState state,
+      IALU alu,
+      long value)
     {
-      memory.SetDoubleWord((ulong)value, (ushort)state.Registers[instruction.Register2]);
+      memory.SetValue(instruction.Width, (ulong)value, (ushort)state.Registers[instruction.Register2]);
     }
   }
 }

@@ -27,5 +27,11 @@ namespace MiniPC_Library.Processing
 
     /// <inheritdoc/>
     public long[] Registers { get; } = new long[REGISTER_COUNT];
+
+    /// <inheritdoc/>
+    public bool Halted { get; set; }
+
+    /// <inheritdoc/>
+    public bool Running { get; set; }
   }
 }

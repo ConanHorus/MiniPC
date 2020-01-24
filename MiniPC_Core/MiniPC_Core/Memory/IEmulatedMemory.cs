@@ -10,59 +10,19 @@ namespace MiniPC_Library.Memory
   public interface IEmulatedMemory
   {
     /// <summary>
-    /// Gets a double word.
+    /// Gets value in memory.
     /// </summary>
-    /// <param name="address">Address of value.</param>
+    /// <param name="width">Width of value.</param>
+    /// <param name="address">Address to get value.</param>
     /// <returns>Value.</returns>
-    ulong GetDoubleWord(ushort address);
+    ulong GetValue(byte width, ushort address);
 
     /// <summary>
-    /// Sets a double word.
+    /// Sets value in memory.
     /// </summary>
+    /// <param name="width">Width of value.</param>
     /// <param name="value">Value.</param>
     /// <param name="address">Address to store value.</param>
-    void SetDoubleWord(ulong value, ushort address);
-
-    /// <summary>
-    /// Gets a word.
-    /// </summary>
-    /// <param name="address">Address of value.</param>
-    /// <returns>Value.</returns>
-    uint GetWord(ushort address);
-
-    /// <summary>
-    /// Sets a word.
-    /// </summary>
-    /// <param name="value">Value.</param>
-    /// <param name="address">Address to store value.</param>
-    void SetWord(uint value, ushort address);
-
-    /// <summary>
-    /// Gets a half word.
-    /// </summary>
-    /// <param name="address">Address of value.</param>
-    /// <returns>Value.</returns>
-    ushort GetHalfWord(ushort address);
-
-    /// <summary>
-    /// Sets a half word.
-    /// </summary>
-    /// <param name="value">Value.</param>
-    /// <param name="address">Address to store value.</param>
-    void SetHalfWord(ushort value, ushort address);
-
-    /// <summary>
-    /// Gets a byte.
-    /// </summary>
-    /// <param name="address">Address of value.</param>
-    /// <returns>Value.</returns>
-    byte GetByte(ushort address);
-
-    /// <summary>
-    /// Sets a byte.
-    /// </summary>
-    /// <param name="value">Value.</param>
-    /// <param name="address">Address to store value.</param>
-    void SetByte(byte value, ushort address);
+    void SetValue(byte width, ulong value, ushort address);
   }
 }

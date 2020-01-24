@@ -29,61 +29,51 @@ namespace MiniPC_Library.Memory
     public const int HALFWORD_LENGTH = 2;
 
     /// <summary>
-    /// Internal memory.
+    /// Size of a byte in bytes.
     /// </summary>
-    private byte[] memory = new byte[MEMORY_SIZE];
+    public const int BYTE_LENGTH = 1;
 
     /// <summary>
-    /// Location of program counter.
+    /// Internal memory.
     /// </summary>
-    private ushort pcLocation = 0;
+    private readonly byte[] memory = new byte[MEMORY_SIZE];
 
     /// <inheritdoc/>
-    public ulong GetDoubleWord(ushort address)
+    public ulong GetValue(byte width, ushort address) // todo unit test
     {
-      return BufferMarshal.GetFromBuffer(this.memory, address, DOUBLEWORD_LENGTH);
+      return BufferMarshal.GetFromBuffer(this.memory, address, this.ConvertWidth(width));
     }
 
     /// <inheritdoc/>
-    public void SetDoubleWord(ulong value, ushort address)
+    public void SetValue(byte width, ulong value, ushort address) // todo unit test
     {
-      BufferMarshal.SetInBuffer(value, this.memory, address, DOUBLEWORD_LENGTH);
+      BufferMarshal.SetInBuffer(value, this.memory, address, this.ConvertWidth(width));
     }
 
-    /// <inheritdoc/>
-    public uint GetWord(ushort address)
+    /// <summary>
+    /// Converts raw width to number of bytes.
+    /// </summary>
+    /// <param name="width">Width from instruction.</param>
+    /// <returns>Number of bytes.</returns>
+    private int ConvertWidth(byte width)
     {
-      return (uint)BufferMarshal.GetFromBuffer(this.memory, address, WORD_LENGTH);
-    }
+      const int WIDTH_BITS = 0b0000_0011;
 
-    /// <inheritdoc/>
-    public void SetWord(uint value, ushort address)
-    {
-      BufferMarshal.SetInBuffer(value, this.memory, address, WORD_LENGTH);
-    }
+      switch (width & WIDTH_BITS)
+      {
+        default:
+        case 0:
+          return BYTE_LENGTH;
 
-    /// <inheritdoc/>
-    public ushort GetHalfWord(ushort address)
-    {
-      return (ushort)BufferMarshal.GetFromBuffer(this.memory, address, HALFWORD_LENGTH);
-    }
+        case 1:
+          return HALFWORD_LENGTH;
 
-    /// <inheritdoc/>
-    public void SetHalfWord(ushort value, ushort address)
-    {
-      BufferMarshal.SetInBuffer(value, this.memory, address, HALFWORD_LENGTH);
-    }
+        case 2:
+          return WORD_LENGTH;
 
-    /// <inheritdoc/>
-    public byte GetByte(ushort address)
-    {
-      return this.memory[address];
-    }
-
-    /// <inheritdoc/>
-    public void SetByte(byte value, ushort address)
-    {
-      this.memory[address] = value;
+        case 3:
+          return DOUBLEWORD_LENGTH;
+      }
     }
   }
 }
