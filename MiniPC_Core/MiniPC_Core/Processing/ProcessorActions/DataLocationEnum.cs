@@ -52,6 +52,11 @@ namespace MiniPC_Library.Processing.ProcessorActions
     /// <summary>
     /// Program counter.
     /// </summary>
-    ProgramCounter
+    ProgramCounter,
+
+    /// <summary>
+    /// Instruction address portion.
+    /// </summary>
+    Address
   }
 }

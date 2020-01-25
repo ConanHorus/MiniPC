@@ -80,6 +80,9 @@ namespace MiniPC_Library.Processing.ProcessorActions
         case DataLocationEnum.Register2:
           return new SecondRegisterBehavior();
 
+        case DataLocationEnum.Address:
+          return new AddressBehavior();
+
         default:
           throw new ArgumentException("Location strategy not defined", nameof(loc));
       }

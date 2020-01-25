@@ -54,34 +54,34 @@ namespace MiniPC_Library.Processing
       null,
 
       // 001100
-      null,
-      null,
+      new GetProgramCounter(),
+      new SetProgramCounter(),
       null,
       null,
 
       // 010000
-      null,
-      null,
-      null,
-      null,
+      new CompareRegisters(),
+      new Jump(true, false, false),
+      new Jump(false, true, false),
+      new Jump(true, true, false),
 
       // 010100
-      null,
-      null,
-      null,
-      null,
+      new Jump(false, false, true),
+      new Jump(true, false, true),
+      new Jump(false, true, true),
+      new Jump(true, true, true),
 
       // 011000
-      null,
-      null,
-      null,
-      null,
+      new CompareMemory(),
+      new Branch(true, false, false),
+      new Branch(false, true, false),
+      new Branch(true, true, false),
 
       // 011100
-      null,
-      null,
-      null,
-      null,
+      new Branch(false, false, true),
+      new Branch(true, false, true),
+      new Branch(false, true, true),
+      new Branch(true, true, true),
 
       // 100000
       null,
