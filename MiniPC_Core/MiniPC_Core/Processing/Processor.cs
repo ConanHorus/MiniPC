@@ -84,10 +84,10 @@ namespace MiniPC_Library.Processing
       new Branch(true, true, true),
 
       // 100000
-      null,
-      null,
-      null,
-      null,
+      new LoadFromAddress(),
+      new LoadFromAddressThroughRegister(),
+      new StoreToAddress(),
+      new StoreToAddressThroughRegister(),
 
       // 100100
       null,

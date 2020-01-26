@@ -39,13 +39,13 @@ namespace MiniPC_Library.Memory
     private readonly byte[] memory = new byte[MEMORY_SIZE];
 
     /// <inheritdoc/>
-    public ulong GetValue(byte width, ushort address) // todo unit test
+    public ulong GetValue(byte width, ushort address)
     {
       return BufferMarshal.GetFromBuffer(this.memory, address, this.ConvertWidth(width));
     }
 
     /// <inheritdoc/>
-    public void SetValue(byte width, ulong value, ushort address) // todo unit test
+    public void SetValue(byte width, ulong value, ushort address)
     {
       BufferMarshal.SetInBuffer(value, this.memory, address, this.ConvertWidth(width));
     }

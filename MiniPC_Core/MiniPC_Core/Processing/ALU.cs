@@ -31,13 +31,13 @@ namespace MiniPC_Library.Processing
     }
 
     /// <inheritdoc/>
-    public void PerformAction(ALUCalculation calculation) // todo unit test
+    public void PerformAction(ALUCalculation calculation)
     {
       this.PerformAction(calculation, 0);
     }
 
     /// <inheritdoc/>
-    public void PerformAction(ALUCalculation calculation, int value) // todo unit test
+    public void PerformAction(ALUCalculation calculation, int value)
     {
       switch (calculation)
       {
@@ -87,7 +87,7 @@ namespace MiniPC_Library.Processing
     /// Shifts left.
     /// </summary>
     /// <param name="amount">Shift amount.</param>
-    private void ShiftLeft(int amount) // todo unit test
+    private void ShiftLeft(int amount)
     {
       this.registers[0] <<= amount;
     }
@@ -96,7 +96,7 @@ namespace MiniPC_Library.Processing
     /// Shifts right.
     /// </summary>
     /// <param name="amount">Shift amount.</param>
-    private void ShiftRight(int amount) // todo unit test
+    private void ShiftRight(int amount)
     {
       this.registers[0] >>= amount;
     }
@@ -105,7 +105,7 @@ namespace MiniPC_Library.Processing
     /// Shifts right with zero fill.
     /// </summary>
     /// <param name="amount">Shift amount.</param>
-    private void ShiftRightZeroFill(int amount) // todo unit test
+    private void ShiftRightZeroFill(int amount)
     {
       ulong unsigned = (ulong)this.registers[0];
       unsigned >>= amount;
@@ -115,7 +115,7 @@ namespace MiniPC_Library.Processing
     /// <summary>
     /// Adds.
     /// </summary>
-    private void Add() // todo unit test
+    private void Add()
     {
       this.registers[0] += this.registers[1];
     }
@@ -123,7 +123,7 @@ namespace MiniPC_Library.Processing
     /// <summary>
     /// Subtracts.
     /// </summary>
-    private void Subtract() // todo unit test
+    private void Subtract()
     {
       this.registers[0] -= this.registers[1];
     }
@@ -131,7 +131,7 @@ namespace MiniPC_Library.Processing
     /// <summary>
     /// Multiplies.
     /// </summary>
-    private void Multiply() // todo unit test
+    private void Multiply()
     {
       this.registers[0] *= this.registers[1];
     }
@@ -139,7 +139,7 @@ namespace MiniPC_Library.Processing
     /// <summary>
     /// Divides.
     /// </summary>
-    private void Divide() // todo unit test
+    private void Divide()
     {
       this.registers[0] /= this.registers[1];
     }
@@ -147,7 +147,7 @@ namespace MiniPC_Library.Processing
     /// <summary>
     /// Not.
     /// </summary>
-    private void Not() // todo unit test
+    private void Not()
     {
       const long FF = -1;
 
@@ -157,7 +157,7 @@ namespace MiniPC_Library.Processing
     /// <summary>
     /// And.
     /// </summary>
-    private void And() // todo unit test
+    private void And()
     {
       this.registers[0] &= this.registers[1];
     }
@@ -165,7 +165,7 @@ namespace MiniPC_Library.Processing
     /// <summary>
     /// Xor.
     /// </summary>
-    private void Xor() // todo unit test
+    private void Xor()
     {
       this.registers[0] ^= this.registers[1];
     }

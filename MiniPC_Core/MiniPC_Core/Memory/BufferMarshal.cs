@@ -16,28 +16,17 @@ namespace MiniPC_Library.Memory
     /// <param name="offset">Offset.</param>
     /// <param name="length">Number of bytes.</param>
     /// <returns>Value.</returns>
-    public static unsafe ulong GetFromBuffer(byte[] array, int offset, int length) // todo unit test
+    public static unsafe ulong GetFromBuffer(byte[] array, int offset, int length)
     {
       if (length == 1)
       {
         return array[offset];
       }
 
-      if (offset + length >= array.Length)
-      {
-        throw new ArgumentOutOfRangeException(nameof(offset));
-      }
-
       ulong value = 0;
       fixed (byte* buffer = &array[offset])
       {
-        byte* p = buffer;
-        while (length-- > 0)
-        {
-          value <<= 8;
-          value |= *p;
-          p++;
-        }
+        Buffer.MemoryCopy(buffer, &value, length, length);
       }
 
       return value;
@@ -50,7 +39,7 @@ namespace MiniPC_Library.Memory
     /// <param name="array">Byte array.</param>
     /// <param name="offset">Offset.</param>
     /// <param name="length">Number of bytes.</param>
-    public static unsafe void SetInBuffer(ulong value, byte[] array, int offset, int length) // todo unit test
+    public static unsafe void SetInBuffer(ulong value, byte[] array, int offset, int length)
     {
       if (length == 1)
       {
@@ -58,21 +47,9 @@ namespace MiniPC_Library.Memory
         return;
       }
 
-      int start = offset + length;
-      if (start >= array.Length)
+      fixed (byte* buffer = &array[offset])
       {
-        throw new ArgumentOutOfRangeException(nameof(offset));
-      }
-
-      fixed (byte* buffer = &array[start])
-      {
-        byte* p = buffer;
-        while (length-- > 0)
-        {
-          *p = (byte)value;
-          value >>= 8;
-          p--;
-        }
+        Buffer.MemoryCopy(&value, buffer, length, length);
       }
     }
   }

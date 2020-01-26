@@ -1,0 +1,16 @@
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_UnitTests\bin\Debug\MiniPC_UnitTests.dll
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_UnitTests\bin\Debug\MiniPC_UnitTests.pdb
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_UnitTests\bin\Debug\MiniPC_Library.dll
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_UnitTests\bin\Debug\MiniPC_Library.pdb
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_UnitTests\obj\Debug\MiniPC_UnitTests.csprojAssemblyReference.cache
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_UnitTests\obj\Debug\MiniPC_UnitTests.csproj.CoreCompileInputs.cache
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_UnitTests\obj\Debug\MiniPC_UnitTests.csproj.CopyComplete
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_UnitTests\obj\Debug\MiniPC_UnitTests.dll
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_UnitTests\obj\Debug\MiniPC_UnitTests.pdb
