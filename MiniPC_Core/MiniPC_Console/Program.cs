@@ -15,31 +15,12 @@ namespace MiniPC_Console
   internal class Program
   {
     /// <summary>
-    /// Container.
-    /// </summary>
-    private static readonly Container Container = new Container();
-
-    /// <summary>
     /// Entroy point of program.
     /// </summary>
     /// <param name="args">Args.</param>
     private static void Main(string[] args)
     {
-      SetupContainerGraph();
-    }
-
-    /// <summary>
-    /// Registers container graph.
-    /// </summary>
-    private static void SetupContainerGraph()
-    {
-      Container.Register<IParsedInstruction, ParsedInstruction>();
-      Container.Register<IEmulatedMemory, EmulatedMemory>(Lifestyle.Singleton);
-      Container.Register<IALU, ALU>();
-      Container.Register<IProcessorState, ProcessorState>();
-      Container.Register<IProcessor, Processor>();
-
-      Container.Verify();
+      var pc = new PC();
     }
   }
 }

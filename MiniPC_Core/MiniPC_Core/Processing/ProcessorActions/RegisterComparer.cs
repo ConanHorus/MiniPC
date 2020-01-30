@@ -23,7 +23,7 @@ namespace MiniPC_Library.Processing.ProcessorActions
 
       state.High = a > b;
       state.Equal = a == b;
-      state.Low = !state.Low;
+      state.Low = !state.High;
     }
   }
 }

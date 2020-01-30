@@ -1,0 +1,15 @@
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_IntegratedTests\bin\Debug\MiniPC_IntegratedTests.exe.config
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_IntegratedTests\bin\Debug\MiniPC_IntegratedTests.exe
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_IntegratedTests\bin\Debug\MiniPC_IntegratedTests.pdb
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_IntegratedTests\bin\Debug\MiniPC_Console.exe
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_IntegratedTests\bin\Debug\MiniPC_Library.dll
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_IntegratedTests\bin\Debug\SimpleInjector.dll
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_IntegratedTests\bin\Debug\MiniPC_Console.pdb
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_IntegratedTests\bin\Debug\MiniPC_Console.exe.config
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_IntegratedTests\bin\Debug\MiniPC_Library.pdb
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_IntegratedTests\bin\Debug\SimpleInjector.xml
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_IntegratedTests\obj\Debug\MiniPC_IntegratedTests.csprojAssemblyReference.cache
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_IntegratedTests\obj\Debug\MiniPC_IntegratedTests.csproj.CoreCompileInputs.cache
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_IntegratedTests\obj\Debug\MiniPC_IntegratedTests.csproj.CopyComplete
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_IntegratedTests\obj\Debug\MiniPC_IntegratedTests.exe
+C:\Users\eckst\Desktop\Git Projects\MiniPC\MiniPC_Core\MiniPC_IntegratedTests\obj\Debug\MiniPC_IntegratedTests.pdb

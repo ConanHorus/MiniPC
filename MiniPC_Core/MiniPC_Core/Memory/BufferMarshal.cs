@@ -18,6 +18,7 @@ namespace MiniPC_Library.Memory
     /// <returns>Value.</returns>
     public static unsafe ulong GetFromBuffer(byte[] array, int offset, int length)
     {
+      // todo fix little-endian, big-endian issue
       if (length == 1)
       {
         return array[offset];
@@ -41,6 +42,7 @@ namespace MiniPC_Library.Memory
     /// <param name="length">Number of bytes.</param>
     public static unsafe void SetInBuffer(ulong value, byte[] array, int offset, int length)
     {
+      // todo fix little-endian, big-endian issue
       if (length == 1)
       {
         array[offset] = (byte)value;

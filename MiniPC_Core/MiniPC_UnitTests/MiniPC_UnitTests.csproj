@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="BufferMarshalTests.cs" />
     <Compile Include="ALUTests.cs" />
+    <Compile Include="ParsedInstructionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

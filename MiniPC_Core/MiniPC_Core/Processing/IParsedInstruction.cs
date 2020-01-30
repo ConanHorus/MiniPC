@@ -48,6 +48,6 @@ namespace MiniPC_Library.Processing
     /// Loads raw instruction.
     /// </summary>
     /// <param name="rawInstruction">Raw instruction.</param>
-    void LoadRawInstruction(ulong rawInstruction);
+    void LoadRawInstruction(uint rawInstruction);
   }
 }

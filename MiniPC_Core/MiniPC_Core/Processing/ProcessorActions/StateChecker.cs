@@ -53,7 +53,7 @@ namespace MiniPC_Library.Processing.ProcessorActions
       IProcessorState state,
       IALU alu)
     {
-      if (state.Low == this.low || state.Equal == this.equal || state.High == this.high)
+      if (state.Low & this.low || state.Equal & this.equal || state.High & this.high)
       {
         this.action.PerformAction(instruction, memory, state, alu);
       }
