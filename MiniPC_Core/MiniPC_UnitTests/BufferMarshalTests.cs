@@ -16,19 +16,19 @@ namespace MiniPC_UnitTests
     {
       var arr = new byte[3];
 
-      BufferMarshal.SetInBuffer(0xAA, arr, 1, 1);
+      BufferMarshal.SetInBuffer(0x01, arr, 1, 1);
 
-      Assert.AreEqual((byte)0xAA, arr[1]);
+      Assert.AreEqual((byte)0x01, arr[1]);
     }
 
     [TestMethod]
     public void ReadByte()
     {
-      var arr = new byte[] { 0, 0xAA, 0 };
+      var arr = new byte[] { 0, 0x01, 0 };
 
       byte v = (byte)BufferMarshal.GetFromBuffer(arr, 1, 1);
 
-      Assert.AreEqual(0xAA, v);
+      Assert.AreEqual(0x01, v);
     }
 
     [TestMethod]
@@ -36,20 +36,20 @@ namespace MiniPC_UnitTests
     {
       var arr = new byte[4];
 
-      BufferMarshal.SetInBuffer(0xAA_AA, arr, 1, 2);
+      BufferMarshal.SetInBuffer(0x01_02, arr, 1, 2);
 
-      Assert.AreEqual(0xAA, arr[1], "Byte 1");
-      Assert.AreEqual(0xAA, arr[2], "Byte 2");
+      Assert.AreEqual(0x01, arr[1], "Byte 1");
+      Assert.AreEqual(0x02, arr[2], "Byte 2");
     }
 
     [TestMethod]
     public void ReadHalfWord()
     {
-      var arr = new byte[] { 0, 0xAA, 0xAA, 0 };
+      var arr = new byte[] { 0, 0x01, 0x02, 0 };
 
       ushort v = (ushort)BufferMarshal.GetFromBuffer(arr, 1, 2);
 
-      Assert.AreEqual((ushort)0xAA_AA, v);
+      Assert.AreEqual((ushort)0x01_02, v);
     }
 
     [TestMethod]
@@ -57,22 +57,22 @@ namespace MiniPC_UnitTests
     {
       var arr = new byte[6];
 
-      BufferMarshal.SetInBuffer(0xAA_AA_AA_AA, arr, 1, 4);
+      BufferMarshal.SetInBuffer(0x01_02_03_04, arr, 1, 4);
 
-      Assert.AreEqual(0xAA, arr[1], "Byte 1");
-      Assert.AreEqual(0xAA, arr[2], "Byte 2");
-      Assert.AreEqual(0xAA, arr[3], "Byte 3");
-      Assert.AreEqual(0xAA, arr[4], "Byte 4");
+      Assert.AreEqual(0x01, arr[1], "Byte 1");
+      Assert.AreEqual(0x02, arr[2], "Byte 2");
+      Assert.AreEqual(0x03, arr[3], "Byte 3");
+      Assert.AreEqual(0x04, arr[4], "Byte 4");
     }
 
     [TestMethod]
     public void ReadWord()
     {
-      var arr = new byte[] { 0, 0xAA, 0xAA, 0xAA, 0xAA, 0 };
+      var arr = new byte[] { 0, 0x01, 0x02, 0x03, 0x04, 0 };
 
       uint v = (uint)BufferMarshal.GetFromBuffer(arr, 1, 4);
 
-      Assert.AreEqual(0xAA_AA_AA_AA, v);
+      Assert.AreEqual((uint)0x01_02_03_04, v);
     }
 
     [TestMethod]
@@ -80,26 +80,26 @@ namespace MiniPC_UnitTests
     {
       var arr = new byte[10];
 
-      BufferMarshal.SetInBuffer(0xAA_AA_AA_AA_AA_AA_AA_AA, arr, 1, 8);
+      BufferMarshal.SetInBuffer(0x01_02_03_04_05_06_07_08, arr, 1, 8);
 
-      Assert.AreEqual(0xAA, arr[1], "Byte 1");
-      Assert.AreEqual(0xAA, arr[2], "Byte 2");
-      Assert.AreEqual(0xAA, arr[3], "Byte 3");
-      Assert.AreEqual(0xAA, arr[4], "Byte 4");
-      Assert.AreEqual(0xAA, arr[5], "Byte 5");
-      Assert.AreEqual(0xAA, arr[6], "Byte 6");
-      Assert.AreEqual(0xAA, arr[7], "Byte 7");
-      Assert.AreEqual(0xAA, arr[8], "Byte 8");
+      Assert.AreEqual(0x01, arr[1], "Byte 1");
+      Assert.AreEqual(0x02, arr[2], "Byte 2");
+      Assert.AreEqual(0x03, arr[3], "Byte 3");
+      Assert.AreEqual(0x04, arr[4], "Byte 4");
+      Assert.AreEqual(0x05, arr[5], "Byte 5");
+      Assert.AreEqual(0x06, arr[6], "Byte 6");
+      Assert.AreEqual(0x07, arr[7], "Byte 7");
+      Assert.AreEqual(0x08, arr[8], "Byte 8");
     }
 
     [TestMethod]
     public void ReadDoubleWord()
     {
-      var arr = new byte[] { 0, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0 };
+      var arr = new byte[] { 0, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0 };
 
       ulong v = BufferMarshal.GetFromBuffer(arr, 1, 8);
 
-      Assert.AreEqual(0xAA_AA_AA_AA_AA_AA_AA_AA, v);
+      Assert.AreEqual((ulong)0x01_02_03_04_05_06_07_08, v);
     }
   }
 }

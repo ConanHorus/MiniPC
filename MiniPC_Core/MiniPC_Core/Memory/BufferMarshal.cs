@@ -18,16 +18,17 @@ namespace MiniPC_Library.Memory
     /// <returns>Value.</returns>
     public static unsafe ulong GetFromBuffer(byte[] array, int offset, int length)
     {
-      // todo fix little-endian, big-endian issue
-      if (length == 1)
-      {
-        return array[offset];
-      }
-
       ulong value = 0;
-      fixed (byte* buffer = &array[offset])
+      fixed (byte* buffer = &array[0])
       {
-        Buffer.MemoryCopy(buffer, &value, length, length);
+        byte* from = buffer + offset + (length - 1);
+        byte* valuePointer = (byte*)&value;
+        byte* to = valuePointer;
+
+        while (length-- > 0)
+        {
+          *to++ = *from--;
+        }
       }
 
       return value;
@@ -42,16 +43,16 @@ namespace MiniPC_Library.Memory
     /// <param name="length">Number of bytes.</param>
     public static unsafe void SetInBuffer(ulong value, byte[] array, int offset, int length)
     {
-      // todo fix little-endian, big-endian issue
-      if (length == 1)
+      fixed (byte* buffer = &array[0])
       {
-        array[offset] = (byte)value;
-        return;
-      }
+        byte* valuePointer = (byte*)&value;
+        byte* from = valuePointer + (length - 1);
+        byte* to = buffer + offset;
 
-      fixed (byte* buffer = &array[offset])
-      {
-        Buffer.MemoryCopy(&value, buffer, length, length);
+        while (length-- > 0)
+        {
+          *to++ = *from--;
+        }
       }
     }
   }
